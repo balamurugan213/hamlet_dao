@@ -2,14 +2,12 @@
   padding: 0 2rem;
 }
 
-
-
-
 .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
+  font-family: 'OCR-A';
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -116,4 +114,71 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.imgbox{
+  /* background-color: rgb(39, 214, 147); */
+  height: 300px;
+  /* width: 300px; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+  /* margin: auto; */
+}
+
+.box{
+  width: 100%;
+}
+
+.imgbox h1{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+
+}
+
+.page{
+  margin: 50px 120px;
+  position: relative;
+}
+
+.medpage{
+  margin: 50px 50px;
+}
+.smallpage{
+  margin: 50px 10px;
+}
+
+.center{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img {
+/* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+  -webkit-transition: all 2s ease-in-out; 
+  
+  /* margin: 1rem;  */
+}
+
+.img:hover {
+filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.02);
+  /* transform: ; */
+
+  /* transform: scale(1.02) translateX(-50%); */
+}
+
+.center.img:hover{
+  transform: scale(1.02) translateX(-50%);
+
 }

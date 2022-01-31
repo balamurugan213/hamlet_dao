@@ -1,7 +1,9 @@
-import { Card, Button,Menu, List ,Input,Segment} from 'semantic-ui-react'
+import { Card, Button,Menu,Header, List ,Input,Segment} from 'semantic-ui-react'
 import Link from 'next/link'
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
+import { useMediaQuery } from 'react-responsive'
+
 
 
 const Navbar = () => {
@@ -9,6 +11,7 @@ const Navbar = () => {
     console.log(router.asPath);
     const [activeItem,setActiveItem]=useState('gallery');
     const handleItemClick = (e, { name }) => setActiveItem(name);
+    const isMobile = useMediaQuery({ query: '(min-width: 641px)' })
     
     useEffect(() => {
         if(router.asPath.match(/gallery/)){
@@ -26,23 +29,24 @@ const Navbar = () => {
             <>
             <Menu inverted>
             {/* Home */}
-            <Menu.Item
-                name='home'
-                active={activeItem === 'homfe'}
-                onClick={handleItemClick}
-            >
-                <Link href='/'>@!#</Link>
-            </Menu.Item>
-            
-            {/* Search box */}
-            <Menu.Menu position='right'>
-            <Menu.Item
+            {/* <Menu.Item
                 name='home'
                 active={activeItem === 'home'}
                 onClick={handleItemClick}
             >
-                <Link href='/'>Home</Link>
-            </Menu.Item>
+                <Link href='/'>HAMELT DOA</Link>
+            </Menu.Item> */}
+            <Menu.Menu position='left'>
+            <Header style={{margin:'auto',color:'white', paddingLeft:'20px'}} as='h3' >
+      HAMLET DAO
+    </Header>
+            {/* <h3 style={{margin:'auto', paddingLeft:'20px'}}>HAMLET DAO</h3> */}
+            </Menu.Menu>
+            
+            
+            {/* Search box */}
+            <Menu.Menu position='right'>
+        
             <Menu.Item
             
             name='about'
@@ -59,10 +63,12 @@ const Navbar = () => {
                 
             >
                     <Link href='/gallery'>Gallery</Link>
-            </Menu.Item>
+                    </Menu.Item>
+            {isMobile && (
                 <Menu.Item>
                 <Input icon='search' placeholder='Search...' />
                 </Menu.Item>
+            )}
             </Menu.Menu>
             </Menu>
 
