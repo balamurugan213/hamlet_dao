@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Card, Button,Menu, List,Grid,Icon,Image as Imag,Input,} from 'semantic-ui-react'
 import { useMediaQuery } from 'react-responsive'
 import { CardTemplate } from '../components/cardTemplate';
+import { useState,useEffect } from 'react';
 
 
 const extra = (
@@ -23,14 +24,27 @@ const extra = (
   
 )
 export default function Home() {
-    const isDesktop = useMediaQuery({
-        query: '(min-width: 1420px)'
-    })
-    const isLaptop = useMediaQuery({ query: '(min-width: 1200px)' })
-    const isTablet = useMediaQuery({ query: '(min-width: 820px)' })
-    const isMobile = useMediaQuery({ query: '(min-width: 641px)' })
+    const isDesktop = useMediaQuery({ minWidth: 1420 })
+    const isLaptop = useMediaQuery({ minWidth: 1224 })
+    const isTablet =useMediaQuery({ minWidth: 820 })
+    const isMobile = useMediaQuery({ minWidth: 641 })
     const isSmall = useMediaQuery({ query: '(max-width: 640px)' })
-    const colnum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
+    const [colnum,setColnum]=useState(5);
+    console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+    
+
+    // setColnum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
+    useEffect(() => {
+      // colnum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
+      setColnum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
+      console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+      
+      return () => {
+        
+      };
+    }, [isDesktop, isLaptop, isTablet, isMobile, colnum,]);
+    console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+    
 
     const data=[
       {img:'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'},
@@ -51,6 +65,8 @@ export default function Home() {
       {img:'https://media.nature.com/lw800/magazine-assets/d41586-021-01642-3/d41586-021-01642-3_19268462.jpg'},
       {img:'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'},
     ]
+    console.log(colnum);
+
   return (
     <div >
       <Head>
@@ -69,8 +85,15 @@ export default function Home() {
     <h1>HAMLET DAO</h1>
 
     </div>
-    <div className={isLaptop ?styles.page:isTablet?styles.medpage:styles.smallpage} >
-    <Grid columns={colnum}>
+    {
+      console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+      }
+      {
+        console.log(isDesktop?"styles.page" :isLaptop ?"styles.page":isTablet?"styles.medpage":"styles.smallpage")
+      }
+    <div className={colnum==5?styles.bigpage:(colnum==4?styles.page:(colnum==3 ?styles.page:(colnum==2?styles.medpage:styles.smallpage)))} >
+    
+    <Grid columns={colnum}  divided='vertically' centered padded className='aligned'>
 
     {Array.from(Array(colnum), (e, i) => {
 

@@ -7,7 +7,7 @@ import { Card, Button,Menu, List,Grid,Icon,Image as Imag,Input,} from 'semantic-
 export const CardTemplate = ({imgurl,likes}) => {
     const isSmall = useMediaQuery({ query: '(max-width: 640px)' })
 return <div style={{marginBottom: '20px'}}>
-    <Card className={`${isSmall && styles.center} ${styles.img}`}>
+    <Card className={`${styles.center} ${styles.img}`}>
         <Imag src={imgurl} wrapped ui={false}  />
         <Card.Content>
             <Card.Header>How Bitcoin works</Card.Header>

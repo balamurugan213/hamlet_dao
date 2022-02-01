@@ -142,16 +142,30 @@
 
 }
 
-.page{
-  margin: 50px 120px;
+
+.center{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.smallpage{
+  margin: 50px 10px;
+}
+
+.bigpage{
+  margin: 50px 150px;
   position: relative;
 }
 
+.page{
+  margin: 50px 100px;
+  position: relative;
+}
+
+
 .medpage{
   margin: 50px 50px;
-}
-.smallpage{
-  margin: 50px 10px;
 }
 
 .center{
