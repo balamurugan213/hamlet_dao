@@ -4,22 +4,22 @@ import { useMediaQuery } from 'react-responsive'
 
 import { Card, Button,Menu, List,Grid,Icon,Image as Imag,Input,} from 'semantic-ui-react'
 
-export const CardTemplate = ({imgurl,likes}) => {
+export const CardTemplate = ({imgurl,likes,title,description,date}) => {
     const isSmall = useMediaQuery({ query: '(max-width: 640px)' })
 return <div style={{marginBottom: '20px'}}>
     <Card className={`${styles.center} ${styles.img}`}>
         <Imag src={imgurl} wrapped ui={false}  />
         <Card.Content>
-            <Card.Header>How Bitcoin works</Card.Header>
-            <Card.Meta>16 May 2016</Card.Meta>
+            <Card.Header>{title}</Card.Header>
+            <Card.Meta>{date}</Card.Meta>
             <Card.Description>
-            Daniel is a comedian living in Nashville. Daniel is a comedian living in Nashville. Daniel is a comedian living in Nashville. aniel is a comedian living in Nashville.
+           {description}
             </Card.Description>
         </Card.Content>
         <Card.Content extra>
             <a>
             <Icon name='user' />
-            {likes} Friends
+            {likes} Tags
             </a>
         </Card.Content>
     </Card>
