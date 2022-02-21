@@ -1,9 +1,9 @@
 ---
-title: Smart Contract Explained Smart Contract Explained
+title: Smart Contract Explained 
 metaTitles: Smart contract
 image: https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3624cc128171271.6167a1a6ac0a6.gif
 description: A smart is an account which is controlled by code...
-date: 16 May 2021
+date: 01 May 2020
 ---
 
 # Smart Contracts
@@ -14,22 +14,20 @@ Tags: ABI, Gas, remix's, solidity, transaction, wei
 
 A smart is an account which is controlled by code insted by human.The code instructs the smart contracts how to behave.
 
-<!-- 
 ### Features of Contract account
 
 - balance- amount this account owns
 - storage - data store for contacts
 - code -Raw machine code for contracts
 - **Exteranal account**
-    
-    -account used by humans which can  be connected and used in any network
-    
-- **Contract account**
-    
-    These account are only specific to one individual network
-    
 
-![Smart%20Cont%20d9450/Capture16.jpg](Smart%20Cont%20d9450/Capture16.jpg)
+    Account used by humans which can  be connected and used in any network
+
+- **Contract account**
+
+    These account are only specific to one individual network
+
+![/assets/smart-contract/capture16.jpg](/assets/smart-contract/capture16.jpg)
 
 ## Programming
 
@@ -43,11 +41,9 @@ A smart is an account which is controlled by code insted by human.The code instr
 
 Solidity program (Contract defination) →Solidity Compailer → Byte code ready for deployment & Appliction Binary Interface (API) or ABI.
 
-![Smart%20Cont%20d9450/Capture17.jpg](Smart%20Cont%20d9450/Capture17.jpg)
+![Capture17.jpg](/assets/smart-contract/Capture17.jpg)
 
- 
-
-```go
+```javascript
 pragma solidity ^0.4.17;
 
 contract Inbox{
@@ -91,20 +87,20 @@ Remix IDE is a powerful open source tool that helps you write Solidity contracts
 
 ## Transaction for creating a contract
 
-![Smart%20Cont%20d9450/Capture19.jpg](Smart%20Cont%20d9450/Capture19.jpg)
+![Capture19.jpg](/assets/smart-contract/Capture19.jpg)
 
 > When we send money to an account we change the data that was stored on the blockchain.*Every transaction change the balance of 2 accounts.*
 > 
 - To create a contract we need t operform a transaction so the will be stored in the blockchain.
 - **So at any time we want change the data in the blockchain we need to sybmit a transaction.**
 
-![Smart%20Cont%20d9450/Capture26.jpg](Smart%20Cont%20d9450/Capture26.jpg)
+![Capture26.jpg](/assets/smart-contract/Capture26.jpg)
 
 - There are 2 type of function that can be executed to the blockchain. One  change the data and other just to view the data
 - We modify the data by preforming a transaction not by calling the function. So we invoke the function that modify data by sending a transaction to the contract instance that targe the specific function.
 - This transaction function will return the transation hash on executing the function(Changing the data).
 
-![Smart%20Cont%20d9450/Capture27.jpg](Smart%20Cont%20d9450/Capture27.jpg)
+![Capture27.jpg](/assets/smart-contract/Capture27.jpg)
 
 ## Different measurement of Ether
 
@@ -121,7 +117,7 @@ For any transaction that is changing the data or implementating the code we need
 - Gas price
 - Gas limit
 
-![Smart%20Cont%20d9450/Capture28.jpg](Smart%20Cont%20d9450/Capture28.jpg)
+![Capture28.jpg](/assets/smart-contract/Capture28.jpg)
 
 ### Lets conaider a code
 
@@ -138,6 +134,6 @@ function doMath(int a,int b){
 - While executing the code miner check the gas consumed to perform each operation and if it exceed the gas limit to program halt at that point.
 - If gas limit is more than what is consumed then the extra will be returned.
 
-![Smart%20Cont%20d9450/Capture29.jpg](Smart%20Cont%20d9450/Capture29.jpg)
+![Capture29.jpg](/assets/smart-contract/Capture29.jpg)
 
-![Smart%20Cont%20d9450/Capture30.jpg](Smart%20Cont%20d9450/Capture30.jpg) -->
+![Capture30.jpg](/assets/smart-contract/Capture30.jpg)

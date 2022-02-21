@@ -8,7 +8,6 @@ import { useMediaQuery } from 'react-responsive'
 import { CardTemplate } from '../components/cardTemplate';
 import { useState,useEffect } from 'react';
 
-
 const extra = (
   <div>
   <a>

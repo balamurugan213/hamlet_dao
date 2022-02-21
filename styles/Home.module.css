@@ -168,6 +168,8 @@
   margin: 50px 50px;
 }
 
+
+
 .center{
   position: relative;
   left: 50%;
@@ -195,4 +197,35 @@ filter: none;
 .center.img:hover{
   transform: scale(1.02) translateX(-50%);
 
+}
+
+
+.smallblogpage{
+  margin: 50px 10px;
+}
+
+.midblogpage{
+  margin: 50px 50px;
+  position: relative;
+}
+
+.largeblogpage{
+  margin: 50px 100px;
+  position: relative;
+}
+
+
+.bigblogpage{
+  margin: 50px 200px;
+  position: relative;
+}
+
+.page{
+  margin: 50px 100px;
+  position: relative;
+}
+
+
+.medpage{
+  margin: 50px 50px;
 }
