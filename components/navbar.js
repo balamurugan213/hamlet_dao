@@ -28,34 +28,24 @@ const Navbar = () => {
     return ( 
             <>
             <Menu inverted>
-            {/* Home */}
-            {/* <Menu.Item
-                name='home'
-                active={activeItem === 'home'}
-                onClick={handleItemClick}
-            >
-                <Link href='/'>HAMELT DOA</Link>
-            </Menu.Item> */}
             <Menu.Menu position='left'>
             <Header style={{margin:'auto',color:'white', paddingLeft:'20px'}} as='h3' >
-      HAMLET DAO
-    </Header>
+                <Link href='/'>
+                    HAMLET DAO
+                </Link>
+            </Header>
             {/* <h3 style={{margin:'auto', paddingLeft:'20px'}}>HAMLET DAO</h3> */}
             </Menu.Menu>
-            
-            
             {/* Search box */}
             <Menu.Menu position='right'>
-        
             <Menu.Item
-            
             name='about'
             active={activeItem === 'about'}
             onClick={handleItemClick}
             // color='yellow'
         >
-            <Link href='/about'>About</Link>
-        </Menu.Item>
+                <Link href='/about'>About</Link>
+            </Menu.Item>
             <Menu.Item
                 name='gallery'
                 active={activeItem === 'gallery'}
@@ -63,7 +53,7 @@ const Navbar = () => {
                 
             >
                     <Link href='/gallery'>Gallery</Link>
-                    </Menu.Item>
+            </Menu.Item>
             {isMobile && (
                 <Menu.Item>
                 <Input icon='search' placeholder='Search...' />
