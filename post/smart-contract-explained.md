@@ -2,6 +2,8 @@
 title: Smart Contract Explained 
 metaTitles: Smart contract
 image: https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3624cc128171271.6167a1a6ac0a6.gif
+thumbImg : https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3624cc128171271.6167a1a6ac0a6.gif
+bannerImage : https://blog.golemproject.net/content/images/size/w2000/2019/03/download--1-.jpeg
 description: A smart is an account which is controlled by code...
 date: 01 May 2020
 ---

@@ -5,7 +5,9 @@ import { Container, Header } from 'semantic-ui-react'
 import { useMediaQuery } from 'react-responsive'
 import Layout from '../../components/layout';
 import { useState,useEffect } from 'react';
+import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+// import '../../styles/globals.css'
 
 
 
@@ -55,9 +57,14 @@ export default function PostPage({ frontmatter, content }) {
 
     return (
     <div>
+
     <Layout>
+   
         <div className={colnum==5?styles.bigblogpage:(colnum==4?styles.bigblogpage:(colnum==3 ?styles.largeblogpage:(colnum==2?styles.midblogpage:styles.smallblogpage)))} >
-        <h1>{frontmatter.title}</h1>
+        <div className='bannerImg'>
+        </div>
+        {/* <img src={frontmatter.bannerImage} alt="VercelLogo"/> */}
+        <h1 style={{fontSize:'4rem'}}>{frontmatter.title}</h1>
             {/* <Container text textAlign='center' className='red'> */}
 
             <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />

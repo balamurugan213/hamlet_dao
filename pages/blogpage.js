@@ -82,7 +82,7 @@ export default function Home({posts}) {
     
     // ]
     const data=posts.map(({ slug, frontmatter }) =>{
-    return {img:frontmatter.image,title:frontmatter.title,description:frontmatter.description,date:frontmatter.date}
+    return {img:frontmatter.image,title:frontmatter.title,description:frontmatter.description,date:frontmatter.date,slug:slug}
 
     } 
     );
@@ -122,7 +122,7 @@ return (
     {data.map((d,index)=>{
     return (
         <>
-        {index%colnum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgurl={d.img}/>}
+        {index%colnum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgurl={d.img} slug={d.slug}/>}
         </>
     
     )})}
