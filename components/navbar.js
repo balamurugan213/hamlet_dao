@@ -29,9 +29,13 @@ const Navbar = () => {
             <>
             <Menu inverted>
             <Menu.Menu position='left'>
+
             <Header style={{margin:'auto',color:'white', paddingLeft:'20px'}} as='h3' >
-                <Link href='/'>
+                <Link href='/' >
+                    <div style={{color:'white' ,cursor: 'pointer'}}>
+
                     HAMLET DAO
+                    </div>
                 </Link>
             </Header>
             {/* <h3 style={{margin:'auto', paddingLeft:'20px'}}>HAMLET DAO</h3> */}
