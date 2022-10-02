@@ -1,7 +1,9 @@
+
 ![hamlet-03.jpg](./theone-03.jpg)
+
 # HAMLET DAO
 
-Hamlet DAO is a opensource cryp blog where you can find content releate to crypto technology and its movement.
+Hamlet DAO is a open source crypto blog where you can find content related to crypto technology and its movement.
 
 [HAMLET DAO](https://hamlet-dao.vercel.app/)
 
