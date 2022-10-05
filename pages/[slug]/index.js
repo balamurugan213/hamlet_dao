@@ -60,7 +60,7 @@ export default function PostPage({ frontmatter, content }) {
 
     <Layout>
    
-        <div className={colnum==5?styles.bigblogpage:(colnum==4?styles.bigblogpage:(colnum==3 ?styles.largeblogpage:(colnum==2?styles.midblogpage:styles.smallblogpage)))} >
+        <div className={colnum==5?styles.bigBlogPage:(colnum==4?styles.bigBlogPage:(colnum==3 ?styles.largeBlogPage:(colnum==2?styles.midBlogPage:styles.smallBlogPage)))} >
         <div className='bannerImg'>
         </div>
         {/* <img src={frontmatter.bannerImage} alt="VercelLogo"/> */}

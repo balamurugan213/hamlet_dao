@@ -116,7 +116,7 @@
   }
 }
 
-.imgbox{
+.imgBox{
   /* background-color: rgb(39, 214, 147); */
   height: 300px;
   /* width: 300px; */
@@ -134,7 +134,7 @@
   width: 100%;
 }
 
-.imgbox h1{
+.imgBox h1{
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -149,11 +149,11 @@
   transform: translateX(-50%);
 }
 
-.smallpage{
+.smallPage{
   margin: 50px 10px;
 }
 
-.bigpage{
+.bigPage{
   margin: 50px 150px;
   position: relative;
 }
@@ -164,7 +164,7 @@
 }
 
 
-.medpage{
+.medPage{
   margin: 50px 50px;
 }
 
@@ -200,22 +200,22 @@ filter: none;
 }
 
 
-.smallblogpage{
+.smallBlogPage{
   margin: 50px 10px;
 }
 
-.midblogpage{
+.midBlogPage{
   margin: 50px 50px;
   position: relative;
 }
 
-.largeblogpage{
+.largeBlogPage{
   margin: 50px 100px;
   position: relative;
 }
 
 
-.bigblogpage{
+.bigBlogPage{
   margin: 50px 200px;
   position: relative;
 }
@@ -225,7 +225,7 @@ filter: none;
   position: relative;
 }
 
-.medpage{
+.medPage{
   margin: 50px 50px;
 }
 

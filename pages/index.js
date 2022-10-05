@@ -11,32 +11,14 @@ import fs from 'fs-extra';
 import matter from 'gray-matter';
 
 
-const extra = (
-  <div>
-  <a>
-    <Icon name='user' />
-    16 Friends
-  </a>
-  <a>
-    <Icon name='user' />
-    16 Friends
-  </a>
-  </div>
-  
-  
-)
-
 export async function getStaticProps() {
   // Get all our posts
   const files = fs.readdirSync('post');
   const posts = files.map((fileName) => {
-      // console.log(fileName)
-      const a="---\ntitle: Hello\nslug: home\n---\n<h1>Hello world!</h1>"
-
       const slug = fileName.replace('.md', '');
       const readFile = fs.readFileSync(`post/${fileName}`, 'utf-8');
       // const from = matter(a);
-      console.log(readFile)
+      // console.log(readFile)
       const { data: frontmatter } = matter(readFile);
       console.log(frontmatter)
       // console.log(a)
@@ -62,28 +44,28 @@ export default function Home({posts}) {
     const isTablet =useMediaQuery({ minWidth: 820 })
     const isMobile = useMediaQuery({ minWidth: 641 })
     const isSmall = useMediaQuery({ query: '(max-width: 640px)' })
-    const [colnum,setColnum]=useState(5);
-    console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+    const [colNum,setColNum]=useState(5);
+    console.log(isDesktop, isLaptop, isTablet, isMobile, colNum)
     
 
-    // setColnum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
+    // setColNum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
     useEffect(() => {
-      // colnum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
-      setColnum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
-      console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+      // colNum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
+      setColNum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
+      console.log(isDesktop, isLaptop, isTablet, isMobile, colNum)
       
       return () => {
         
       };
-    }, [isDesktop, isLaptop, isTablet, isMobile, colnum,]);
-    console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+    }, [isDesktop, isLaptop, isTablet, isMobile, colNum,]);
+    console.log(isDesktop, isLaptop, isTablet, isMobile, colNum)
     
 
     const data=posts.map(({ slug, frontmatter }) =>{
       return {img:frontmatter.image,title:frontmatter.title,description:frontmatter.description,date:frontmatter.date,slug:slug}
   
       } );
-    console.log(colnum);
+    console.log(colNum);
 
   return (
     <div >
@@ -98,28 +80,22 @@ export default function Home({posts}) {
   <Layout>
     {/* <h3>ss</h3> */}
     
-    <div className={styles.imgbox}>
+    <div className={styles.imgBox}>
     <Image src="/hamlet-01.svg" alt="VercelLogo" layout='fill'/>
     <h1>HAMLET DAO</h1>
 
     </div>
-    {
-      console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
-      }
-      {
-        console.log(isDesktop?"styles.page" :isLaptop ?"styles.page":isTablet?"styles.medpage":"styles.smallpage")
-      }
-    <div className={colnum==5?styles.bigpage:(colnum==4?styles.page:(colnum==3 ?styles.page:(colnum==2?styles.medpage:styles.smallpage)))} >
+    <div className={colNum==5?styles.bigPage:(colNum==4?styles.page:(colNum==3 ?styles.page:(colNum==2?styles.medPage:styles.smallPage)))} >
     
-    <Grid columns={colnum}  divided='vertically' centered padded className='aligned'>
+    <Grid columns={colNum}  divided='vertically' centered padded className='aligned'>
 
-    {Array.from(Array(colnum), (e, i) => {
+    {Array.from(Array(colNum), (e, i) => {
 
     return  <Grid.Column>
     {data.map((d,index)=>{
       return (
         <>
-         {index%colnum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgurl={d.img} slug={d.slug}/>}
+         {index%colNum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgUrl={d.img} slug={d.slug}/>}
         </>
       
     )})}
