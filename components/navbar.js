@@ -9,13 +9,13 @@ import { useMediaQuery } from 'react-responsive'
 const Navbar = () => {
     const router = useRouter();
     console.log(router.asPath);
-    const [activeItem,setActiveItem]=useState('gallery');
+    const [activeItem,setActiveItem]=useState('Resources');
     const handleItemClick = (e, { name }) => setActiveItem(name);
     const isMobile = useMediaQuery({ query: '(min-width: 641px)' })
     
     useEffect(() => {
-        if(router.asPath.match(/gallery/)){
-            setActiveItem('gallery');
+        if(router.asPath.match(/resources/)){
+            setActiveItem('Resources');
         }
         else if(router.asPath.match(/about/)){
             setActiveItem('about');
@@ -31,7 +31,7 @@ const Navbar = () => {
             <Menu.Menu position='left'>
 
             <Header style={{margin:'auto',color:'white', paddingLeft:'20px'}} as='h3' >
-                <Link href='/' >
+                <Link href='/' passHref >
                     <div style={{color:'white' ,cursor: 'pointer'}}>
 
                     HAMLET DAO
@@ -51,12 +51,12 @@ const Navbar = () => {
                 <Link href='/about'>About</Link>
             </Menu.Item>
             <Menu.Item
-                name='gallery'
-                active={activeItem === 'gallery'}
+                name='Resources'
+                active={activeItem === 'Resources'}
                 onClick={handleItemClick}
                 
             >
-                    <Link href='/gallery'>Gallery</Link>
+                    <Link href='/resources'>Resources</Link>
             </Menu.Item>
             {isMobile && (
                 <Menu.Item>
@@ -67,39 +67,7 @@ const Navbar = () => {
             </Menu>
 
 
-            {/* <Menu stackable>
-                <Menu.Item>
-                <img src='/logo.png' />
-                </Menu.Item>
-
-                <Menu.Item
-                name='features'
-                active={activeItem === 'features'}
-                onClick={handleItemClick}
-                >
-                Features
-                </Menu.Item>
-
-                <Menu.Item
-                name='testimonials'
-                active={activeItem === 'testimonials'}
-                onClick={handleItemClick}
-                >
-                Testimonials
-                </Menu.Item>
-
-                <Menu.Item
-                name='sign-in'
-                active={activeItem === 'sign-in'}
-                onClick={handleItemClick}
-                >
-                Sign-in
-                </Menu.Item>
-            </Menu> */}
-
-            {/* <Segment>
-            <img src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-            </Segment> */}
+          
             </>
     );
 }

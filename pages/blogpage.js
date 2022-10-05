@@ -101,7 +101,7 @@ return (
 <Layout>
     {/* <h3>ss</h3> */}
     
-    <div className={styles.imgbox}>
+    <div className={styles.imgBox}>
     <Image src="/hamlet-01.svg" alt="VercelLogo" layout='fill'/>
     <h1>HAMLET DAO</h1>
 
@@ -110,9 +110,9 @@ return (
     console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
     }
     {
-        console.log(isDesktop?"styles.page" :isLaptop ?"styles.page":isTablet?"styles.medpage":"styles.smallpage")
+        console.log(isDesktop?"styles.page" :isLaptop ?"styles.page":isTablet?"styles.medPage":"styles.smallPage")
     }
-    <div className={colnum==5?styles.bigpage:(colnum==4?styles.page:(colnum==3 ?styles.page:(colnum==2?styles.medpage:styles.smallpage)))} >
+    <div className={colnum==5?styles.bigPage:(colnum==4?styles.page:(colnum==3 ?styles.page:(colnum==2?styles.medPage:styles.smallPage)))} >
     
     <Grid columns={colnum}  divided='vertically' centered padded className='aligned'>
 
@@ -122,26 +122,26 @@ return (
     {data.map((d,index)=>{
     return (
         <>
-        {index%colnum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgurl={d.img} slug={d.slug}/>}
+        {index%colnum==i &&<CardTemplate likes={4} title={d.title} description={d.description} date={d.date} imgUrl={d.img} slug={d.slug}/>}
         </>
     
     )})}
 </Grid.Column>
 })}
     {/* <Grid.Column>
-        <CardTemplate imgurl={'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
+        <CardTemplate imgUrl={'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
     </Grid.Column>
     <Grid.Column>
-        <CardTemplate imgurl={'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
+        <CardTemplate imgUrl={'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
     </Grid.Column>
     <Grid.Column>
-        <CardTemplate imgurl={'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3624cc128171271.6167a1a6ac0a6.gif'}></CardTemplate>
+        <CardTemplate imgUrl={'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3624cc128171271.6167a1a6ac0a6.gif'}></CardTemplate>
     </Grid.Column>
     <Grid.Column>
-        <CardTemplate imgurl={'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'}></CardTemplate>
+        <CardTemplate imgUrl={'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'}></CardTemplate>
     </Grid.Column>
     <Grid.Column>
-        <CardTemplate imgurl={'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
+        <CardTemplate imgUrl={'https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'}></CardTemplate>
     </Grid.Column> */}
     {/* <Grid.Column>
     
