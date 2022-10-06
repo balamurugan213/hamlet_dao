@@ -8,7 +8,7 @@ const Footer = () => {
         color: '#777',
         borderTop: '1px solid #eaeaea'}}>
         {/* <div> */}
-            <h5>created by balamurugan213</h5>
+            <h5>created by Balamurugan213</h5>
         </div>
     );
 }

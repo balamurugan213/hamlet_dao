@@ -38,7 +38,7 @@ export default function Home({ posts }) {
             return (
                 <>
                 <div key={slug}>
-                    {<CardTemplate likes={4} imgurl={`${frontmatter.image}`}/>}
+                    {<CardTemplate likes={4} imgUrl={`${frontmatter.image}`}/>}
                 </div>
                 
                 </>
