@@ -7,6 +7,7 @@ import Layout from '../../components/layout';
 import { useState,useEffect } from 'react';
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+import Showdown from 'showdown';
 // import '../../styles/globals.css'
 
 
@@ -42,36 +43,36 @@ export default function PostPage({ frontmatter, content }) {
     const isTablet =useMediaQuery({ minWidth: 820 })
     const isMobile = useMediaQuery({ minWidth: 641 })
     const isSmall = useMediaQuery({ query: '(max-width: 640px)' })
-    const [colnum,setColnum]=useState(5);
-
+    const [colNum,setColNum]=useState(5);
+    var converter = new Showdown.Converter()
+    // showdown.Converter();
+    const html = converter.makeHtml(content);
     useEffect(() => {
-        // colnum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
-        setColnum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
-        console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+        // colNum=isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1;
+        setColNum(isDesktop?5:isLaptop?4:isTablet?3:isMobile?2:1)
+        console.log(isDesktop, isLaptop, isTablet, isMobile, colNum)
         
         return () => {
         
         };
-    }, [isDesktop, isLaptop, isTablet, isMobile, colnum,]);
-    console.log(isDesktop, isLaptop, isTablet, isMobile, colnum)
+    }, [isDesktop, isLaptop, isTablet, isMobile, colNum,]);
+    console.log(isDesktop, isLaptop, isTablet, isMobile, colNum)
 
     return (
     <div>
-
     <Layout>
    
-        <div className={colnum==5?styles.bigBlogPage:(colnum==4?styles.bigBlogPage:(colnum==3 ?styles.largeBlogPage:(colnum==2?styles.midBlogPage:styles.smallBlogPage)))} >
+        <div className={colNum==5?styles.bigBlogPage:(colNum==4?styles.bigBlogPage:(colNum==3 ?styles.largeBlogPage:(colNum==2?styles.midBlogPage:styles.smallBlogPage)))} >
         <div className='bannerImg'>
         </div>
-        {/* <img src={frontmatter.bannerImage} alt="VercelLogo"/> */}
         <h1 style={{fontSize:'4rem'}}>{frontmatter.title}</h1>
-            {/* <Container text textAlign='center' className='red'> */}
-
-            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-            {/* </Container> */}
+            <div dangerouslySetInnerHTML={{ __html: html
+                //  md().render(content)
+                }} />
         </div>
         
     </Layout>
     </div>
     );
 }
+
