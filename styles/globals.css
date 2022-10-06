@@ -65,3 +65,14 @@ pre {
     background-color: #333;
   }
 
+  p img {
+    display: block;
+    max-width:530px;
+    max-height:595px;
+    width: auto;
+    height: auto;
+  }
+
+.leftImg img{
+    width: auto;
+  }
