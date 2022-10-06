@@ -5,13 +5,12 @@ import Layout from '../components/layout';
 import { useState,useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 import Showdown from 'showdown';
-// import '../../styles/globals.css'
 
 
 
 
 export async function getStaticProps() {
-    const fileName = fs.readFileSync(`README.md`, 'utf-8');
+    const fileName = fs.readFileSync(`about.md`, 'utf-8');
     const { data: frontmatter, content } = matter(fileName);
     return {
     props: {
